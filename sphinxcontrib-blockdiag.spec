@@ -4,7 +4,7 @@
 #
 Name     : sphinxcontrib-blockdiag
 Version  : 1.5.5
-Release  : 11
+Release  : 12
 URL      : https://files.pythonhosted.org/packages/04/50/7a43117a5a8a16acaceabc5ad69092fa1dacb11ef83c84fdf234e5a3502f/sphinxcontrib-blockdiag-1.5.5.tar.gz
 Source0  : https://files.pythonhosted.org/packages/04/50/7a43117a5a8a16acaceabc5ad69092fa1dacb11ef83c84fdf234e5a3502f/sphinxcontrib-blockdiag-1.5.5.tar.gz
 Summary  : Sphinx "blockdiag" extension
@@ -54,7 +54,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1536549318
+export SOURCE_DATE_EPOCH=1536550371
 python3 setup.py build -b py3
 
 %install
