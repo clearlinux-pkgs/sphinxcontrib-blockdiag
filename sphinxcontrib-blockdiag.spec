@@ -4,16 +4,17 @@
 #
 Name     : sphinxcontrib-blockdiag
 Version  : 1.5.5
-Release  : 12
+Release  : 13
 URL      : https://files.pythonhosted.org/packages/04/50/7a43117a5a8a16acaceabc5ad69092fa1dacb11ef83c84fdf234e5a3502f/sphinxcontrib-blockdiag-1.5.5.tar.gz
 Source0  : https://files.pythonhosted.org/packages/04/50/7a43117a5a8a16acaceabc5ad69092fa1dacb11ef83c84fdf234e5a3502f/sphinxcontrib-blockdiag-1.5.5.tar.gz
 Summary  : Sphinx "blockdiag" extension
 Group    : Development/Tools
 License  : BSD-2-Clause
-Requires: sphinxcontrib-blockdiag-python3
-Requires: sphinxcontrib-blockdiag-license
-Requires: sphinxcontrib-blockdiag-python
+Requires: sphinxcontrib-blockdiag-license = %{version}-%{release}
+Requires: sphinxcontrib-blockdiag-python = %{version}-%{release}
+Requires: sphinxcontrib-blockdiag-python3 = %{version}-%{release}
 Requires: Sphinx
+Requires: blockdiag
 BuildRequires : buildreq-distutils3
 
 %description
@@ -31,7 +32,7 @@ license components for the sphinxcontrib-blockdiag package.
 %package python
 Summary: python components for the sphinxcontrib-blockdiag package.
 Group: Default
-Requires: sphinxcontrib-blockdiag-python3
+Requires: sphinxcontrib-blockdiag-python3 = %{version}-%{release}
 
 %description python
 python components for the sphinxcontrib-blockdiag package.
@@ -54,14 +55,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1536550371
-python3 setup.py build -b py3
+export SOURCE_DATE_EPOCH=1541270894
+python3 setup.py build
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/sphinxcontrib-blockdiag
-cp LICENSE %{buildroot}/usr/share/doc/sphinxcontrib-blockdiag/LICENSE
-python3 -tt setup.py build -b py3 install --root=%{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/sphinxcontrib-blockdiag
+cp LICENSE %{buildroot}/usr/share/package-licenses/sphinxcontrib-blockdiag/LICENSE
+python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
@@ -70,8 +71,8 @@ echo ----[ mark ]----
 %defattr(-,root,root,-)
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/sphinxcontrib-blockdiag/LICENSE
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/sphinxcontrib-blockdiag/LICENSE
 
 %files python
 %defattr(-,root,root,-)
