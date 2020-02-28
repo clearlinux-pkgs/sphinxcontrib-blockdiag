@@ -4,7 +4,7 @@
 #
 Name     : sphinxcontrib-blockdiag
 Version  : 2.0.0
-Release  : 22
+Release  : 23
 URL      : https://files.pythonhosted.org/packages/ad/7a/d9e57607522d414e1a089f8da982750ded0e100b1bfc210b17f0fe98db47/sphinxcontrib-blockdiag-2.0.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ad/7a/d9e57607522d414e1a089f8da982750ded0e100b1bfc210b17f0fe98db47/sphinxcontrib-blockdiag-2.0.0.tar.gz
 Summary  : Sphinx "blockdiag" extension
@@ -23,8 +23,34 @@ BuildRequires : buildreq-distutils3
 =======================
 sphinxcontrib-blockdiag
 =======================
+
 .. image:: https://travis-ci.org/blockdiag/sphinxcontrib-blockdiag.svg?branch=master
-:target: https://travis-ci.org/blockdiag/sphinxcontrib-blockdiag
+   :target: https://travis-ci.org/blockdiag/sphinxcontrib-blockdiag
+
+.. image:: https://coveralls.io/repos/blockdiag/sphinxcontrib-blockdiag/badge.png?branch=master
+   :target: https://coveralls.io/r/blockdiag/sphinxcontrib-blockdiag?branch=master
+
+.. image:: https://codeclimate.com/github/blockdiag/sphinxcontrib-blockdiag/badges/gpa.svg
+   :target: https://codeclimate.com/github/blockdiag/sphinxcontrib-blockdiag
+
+A sphinx extension for embedding block diagram using blockdiag_.
+
+This extension enables you to insert block diagrams into your document.
+Following code is an example::
+
+   .. blockdiag::
+
+      diagram {
+        A -> B -> C;
+             B -> D;
+      }
+
+.. _blockdiag: http://bitbucket.org/blockdiag/blockdiag/
+
+
+For more details, see `online documentation`_ at http://blockdiag.com/.
+
+.. _online documentation: http://blockdiag.com/en/blockdiag/sphinxcontrib.html
 
 %package license
 Summary: license components for the sphinxcontrib-blockdiag package.
@@ -47,6 +73,7 @@ python components for the sphinxcontrib-blockdiag package.
 Summary: python3 components for the sphinxcontrib-blockdiag package.
 Group: Default
 Requires: python3-core
+Provides: pypi(sphinxcontrib-blockdiag)
 
 %description python3
 python3 components for the sphinxcontrib-blockdiag package.
@@ -61,7 +88,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1576002946
+export SOURCE_DATE_EPOCH=1582919975
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
