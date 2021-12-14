@@ -4,7 +4,7 @@
 #
 Name     : sphinxcontrib-blockdiag
 Version  : 3.0.0
-Release  : 38
+Release  : 39
 URL      : https://files.pythonhosted.org/packages/42/83/0624c9f694fd942b9c11dbd3d6694bb9b10a68b22f65b1623b4657f4b7ac/sphinxcontrib-blockdiag-3.0.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/42/83/0624c9f694fd942b9c11dbd3d6694bb9b10a68b22f65b1623b4657f4b7ac/sphinxcontrib-blockdiag-3.0.0.tar.gz
 Summary  : Sphinx "blockdiag" extension
